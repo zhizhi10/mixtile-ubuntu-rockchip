@@ -83,6 +83,11 @@ sed -i -r \
     -e "s/^#[ ]*AutomaticLogin =.*\$/AutomaticLogin=mixtile/" \
     /etc/gdm3/custom.conf
 
+sed -i '/^U_BOOT_FDT_OVERLAYS=/d' /etc/default/u-boot
+echo 'U_BOOT_FDT_OVERLAYS="device-tree/rockchip/overlay/mixtile-core3588e-nano.dtbo"' \
+  | sudo tee -a /etc/default/u-boot >/dev/null
+u-boot-update
+
 ln -sf /usr/share/zoneinfo/Etc/UTC /etc/localtime
 echo "Etc/UTC" >/etc/timezone
 echo "mixtile-ubuntu" >/etc/hostname
