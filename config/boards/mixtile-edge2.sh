@@ -7,7 +7,7 @@ export BOARD_CPU="ARM Cortex A55"
 export KERNEL_PACKAGE="kernel-mixtile-rk3568-edge2"
 export UBOOT_PACKAGE="u-boot-mixtile-rk3568-edge2"
 export UBOOT_RULES_TARGET="mixtile-edge2-rk3568"
-export COMPATIBLE_SUITES=("jammy" "noble")
+export COMPATIBLE_SUITES=("noble")
 export COMPATIBLE_FLAVORS=("server" "desktop")
 
 function config_image_hook__mixtile-edge2() {
